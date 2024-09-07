@@ -5,7 +5,6 @@ WORKDIR /home/node/app
 
 FROM base AS builder
 WORKDIR /home/node/app
-RUN apk add --no-cache --virtual .build-deps git make python g++
 COPY --chown=node:node ./package.json ./package.json
 COPY --chown=node:node ./package-lock.json ./package-lock.json
 USER node
