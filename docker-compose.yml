@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  chatbot:
+    image: wa-bot:latest
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./auth_info_baileys:/home/node/app/auth_info_baileys
